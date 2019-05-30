@@ -1,0 +1,26 @@
+{
+  "name": "loadsy",
+  "version": "1.0.0",
+  "description": " Serve random dummy datasets with given properties ",
+  "main": "loadsy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/birm/loadsy.git"
+  },
+  "keywords": [
+    "load",
+    "load",
+    "test",
+    "test",
+    "random"
+  ],
+  "author": "birm",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/birm/loadsy/issues"
+  },
+  "homepage": "https://github.com/birm/loadsy#readme"
+}
