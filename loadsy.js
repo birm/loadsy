@@ -3,7 +3,8 @@ const url = require('url');
 const words = require('./words.js');
 
 const PORT = 8181
-var srv = http.createServer(function(req, res){
+
+const srv = http.createServer(function(req, res) {
   var url_parts = url.parse(req.url, true);
   var query = url_parts.query;
   res.setHeader('Content-Type', 'application/json');
@@ -18,34 +19,34 @@ var srv = http.createServer(function(req, res){
   types.f = query['f'] || query['float'] || 0
   types.u = query['u'] || query['img'] || 0
   const handlers = {}
-  handlers.s = function(){
-    return words[Math.floor(Math.random()*words.length)]
+  handlers.s = function() {
+    return words[Math.floor(Math.random() * words.length)]
   }
-  handlers.t = function(){
+  handlers.t = function() {
     let usedwords = []
-    for (let i=0; i<10; i++){
-      usedwords.push(words[Math.floor(Math.random()*words.length)])
+    for (let i = 0; i < 10; i++) {
+      usedwords.push(words[Math.floor(Math.random() * words.length)])
     }
     return usedwords.join(" ")
   }
-  handlers.i = function(){
-    return Math.floor(Math.random()*100)
+  handlers.i = function() {
+    return Math.floor(Math.random() * 100)
   }
-  handlers.f = function(){
-    return Math.random()*100
+  handlers.f = function() {
+    return Math.random() * 100
   }
-  handlers.u = function(){
-    return "https://via.placeholder.com/100?text=" + words[Math.floor(Math.random()*words.length)]
+  handlers.u = function() {
+    return "https://via.placeholder.com/100?text=" + words[Math.floor(Math.random() * words.length)]
   }
-  for (let i=0;i<len;i++){
+  for (let i = 0; i < len; i++) {
     let nxt = {}
     Object.keys(types).forEach(function(key) {
-      for (let j=0; j<types[key]; j++){
-        nxt[key+j] = handlers[key]()
+      for (let j = 0; j < types[key]; j++) {
+        nxt[key + j] = handlers[key]()
       }
     });
-    if(isFirst){
-      isFirst=false
+    if (isFirst) {
+      isFirst = false
     } else {
       res.write(",")
     }
@@ -55,6 +56,6 @@ var srv = http.createServer(function(req, res){
   res.end()
 });
 
-srv.listen(PORT, function(){
+srv.listen(PORT, function() {
   console.log("listening on " + PORT)
 })
