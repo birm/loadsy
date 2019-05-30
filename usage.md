@@ -8,7 +8,7 @@
 * img or u - the number of image url fields
 
 # example url
-TODO
+http://<base url>/?t=5&s=2&u=3&i=10&f=3&l=1000
 
 # accessing attributes
-Each record has attributes named after the single letter parameter code, a dash, then a number ranging from 0 to one less than the number given
+Each record has attributes named after the single letter parameter code then a number ranging from 0 to one less than the number given
