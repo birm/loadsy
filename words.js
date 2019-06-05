@@ -20,7 +20,7 @@ const wordList = [
   "bee","been","before","began","beginning","begun","behavior","behind",
   "being","believed","bell","belong","below","belt","bend","beneath",
   "bent","beside","best","bet","better","between","beyond","bicycle",
-  "bigger","biggest","bill","birds","birth","birthday","bit","bite",
+  "bigger","biggest","bill","birds","birb","borb","birth","birthday","bit","bite",
   "black","blank","blanket","blew","blind","block","blood","blow",
   "blue","board","boat","body","bone","book","border","born",
   "both","bottle","bottom","bound","bow","bowl","box","boy",
