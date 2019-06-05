@@ -2,6 +2,8 @@ const http = require('http');
 const url = require('url');
 const words = require('./words.js');
 
+const NATO = require('./nato.js')
+
 const PORT = 8181
 
 const srv = http.createServer(function(req, res) {
@@ -18,6 +20,10 @@ const srv = http.createServer(function(req, res) {
   types.i = query['i'] || query['int'] || 0
   types.f = query['f'] || query['float'] || 0
   types.u = query['u'] || query['img'] || 0
+  types.c = query['c'] || query['cat'] || 0
+  var cat_order = query['co'] || query['cat-ord'] || NATO.length
+  cat_order = Math.min(cat_order, NATO.length)
+  console.log(cat_order)
   const handlers = {}
   handlers.s = function() {
     return words[Math.floor(Math.random() * words.length)]
@@ -37,6 +43,9 @@ const srv = http.createServer(function(req, res) {
   }
   handlers.u = function() {
     return "https://via.placeholder.com/100?text=" + words[Math.floor(Math.random() * words.length)]
+  }
+  handlers.c = function(){
+    return NATO[Math.floor(Math.random() * cat_order)]
   }
   for (let i = 0; i < len; i++) {
     let nxt = {}

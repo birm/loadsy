@@ -6,7 +6,7 @@
 * int or i - the number of integer attributes
 * float or f - the number of floating point attributes
 * img or u - the number of image url fields
-
+* cat or c - the number of categorical fields (based on NATO Phonetic Alphabet; number of symbols controlled by co or cat-ord)
 # example url
 http://<base url>/?t=5&s=2&u=3&i=10&f=3&l=1000
 
